@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BUHWAR COLON</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_click">Title click</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_group">Group</string>
+    <string name="copyright">© Daniel Medina - danielme.com</string>
+    <string name="descripcion_info">Empresa Mexicana fundada en el año 2016 la ciudad de Zacatecas,
+        con la finalidad de innovar en el ramo de la seguridad privada, entendiendo que nuestro
+        principal función es preventiva y disuasiva, apoyándonos en la tecnología como una
+        herramienta fundamental para salvaguardara nuestros clientes. Constitucional para
+        proporcionar vigilancia y la protección de bienes con personas de seguridad privada
+        intramuros las 24 horas del diá, los 365 diás del año a industrias, comercios, zonas.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
