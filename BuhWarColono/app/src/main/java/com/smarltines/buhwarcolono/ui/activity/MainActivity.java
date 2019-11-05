@@ -21,6 +21,7 @@ import com.smarltines.buhwarcolono.ui.fragment.clasificar.ClasificarFragment;
 import com.smarltines.buhwarcolono.ui.fragment.estadisticas.EstadisticasFragment;
 import com.smarltines.buhwarcolono.ui.fragment.guardia.GuardiaFragment;
 import com.smarltines.buhwarcolono.ui.fragment.helper.InfoFragment;
+import com.smarltines.buhwarcolono.ui.fragment.sos.SosFragment;
 import com.smarltines.buhwarcolono.ui.fragment.visita.VisitaFragment;
 
 
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment visitaFragment;
     private Fragment clasificarFragment;
     private Fragment estadisticasFregment;
+    private Fragment sosFregment;
     private FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         visitaFragment = VisitaFragment.newInstance();
         estadisticasFregment = EstadisticasFragment.newInstance();
         clasificarFragment = ClasificarFragment.newInstance();
+        sosFregment = SosFragment.newInstance();
         fragmentManager = getSupportFragmentManager();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
@@ -75,8 +80,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnPanico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Toast.makeText(MainActivity.this, "Panico",
-                        Toast.LENGTH_SHORT).show();
+                setTitle("ASP Solutions");
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,sosFregment)
+                        .addToBackStack(null)
+                        .commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
+
             }
         });
 
