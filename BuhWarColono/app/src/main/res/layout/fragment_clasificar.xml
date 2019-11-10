@@ -34,6 +34,7 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/califica1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp">
@@ -100,6 +101,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/califica2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp">
@@ -166,6 +168,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/califica3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp">
@@ -177,11 +180,11 @@
 
                         <ImageView
                             android:id="@+id/asdfagsag"
-                            app:srcCompat="@drawable/user"
                             android:layout_width="147dp"
                             android:layout_height="83dp"
                             android:layout_margin="8dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/user" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -232,6 +235,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/califica4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp">
@@ -243,11 +247,11 @@
 
                         <ImageView
                             android:id="@+id/img"
-                            app:srcCompat="@drawable/user"
                             android:layout_width="147dp"
                             android:layout_height="83dp"
                             android:layout_margin="8dp"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/user" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
