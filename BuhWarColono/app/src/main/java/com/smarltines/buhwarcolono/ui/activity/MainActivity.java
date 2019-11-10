@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_calificar:
-                setTitle("Clasificar a mi guardia");
+                setTitle("Calificar a mi guardia");
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragment_content,clasificarFragment)
                         .addToBackStack(null)
