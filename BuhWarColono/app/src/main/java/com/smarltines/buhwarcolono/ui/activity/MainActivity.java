@@ -1,7 +1,13 @@
 package com.smarltines.buhwarcolono.ui.activity;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -82,16 +90,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(final View v) {
                 setTitle("ASP Solutions");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_content,sosFregment)
-                        .addToBackStack(null)
-                        .commit();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragment_content,sosFregment)
+//                        .addToBackStack(null)
+//                        .commit();
+                checkpermissioncall();
                 drawerLayout.closeDrawer(GravityCompat.START);
 
             }
         });
-
-
 
     }
 
@@ -132,10 +139,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_visitas:
                 setTitle("Programar vista");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_content,visitaFragment)
-                        .addToBackStack(null)
-                        .commit();
+                checkpermissionwriteread();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragment_content,visitaFragment)
+//                        .addToBackStack(null)
+//                        .commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_calificar:
@@ -183,4 +191,78 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //cambio de estado, puede ser STATE_IDLE, STATE_DRAGGING or STATE_SETTLING
     }
 
+    ////PERMISOS Y ESAS MADRES
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String[] permissions, int[] grantResults) {
+        if (requestCode == 100) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permiso concedido ahora puedes acceder a tus archivos ", Toast.LENGTH_LONG).show();
+                fragmentManager.beginTransaction().replace(R.id.fragment_content,visitaFragment).addToBackStack(null).commit();
+            } else {
+                Toast.makeText(this, "Oops permiso denegado", Toast.LENGTH_LONG).show();
+                //finish();
+            }
+        }
+        if (requestCode == 200) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permiso concedido ahora puedes hacer llamadas ", Toast.LENGTH_LONG).show();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,sosFregment)
+                        .addToBackStack(null)
+                        .commit();
+            } else {
+                Toast.makeText(this, "Oops permiso denegado", Toast.LENGTH_LONG).show();
+                //finish();
+            }
+        }
+    }
+
+
+    private void checkpermissionwriteread() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Permisos concedidos ahora puedes leer/escribir tus archivos ", Toast.LENGTH_LONG).show();
+            fragmentManager.beginTransaction().replace(R.id.fragment_content,visitaFragment).addToBackStack(null).commit();
+        } else {
+            solicitarPermiso(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    "Sin el permiso de leer/escribir archivos no puedes acceder a tus archivos", 100, this);
+        }
+    }
+
+    private void checkpermissioncall() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Permisos concedidos ahora puedes hacer llamadas ", Toast.LENGTH_LONG).show();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_content,sosFregment)
+                    .addToBackStack(null)
+                    .commit();
+        } else {
+            solicitarPermiso(new String[]{Manifest.permission.CALL_PHONE},
+                    "Sin el permiso de llamadas no puedes hacer llamadas de panico", 200, this);
+        }
+    }
+
+
+    private void solicitarPermiso(final String[] permisos, final String justificacion,
+                                  final int requestCode, final Activity actividad) {
+//        if (ActivityCompat.shouldShowRequestPermissionRationale(actividad,
+//                permisos[0]) && ActivityCompat.shouldShowRequestPermissionRationale(actividad,
+//                permisos[1])) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(actividad,
+                permisos[0])) {
+            new AlertDialog.Builder(actividad)
+                    .setTitle("Solicitud de permiso")
+                    .setMessage(justificacion)
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            ActivityCompat.requestPermissions(actividad,
+                                    permisos, requestCode);
+                        }
+                    })
+                    .show();
+        } else {
+            ActivityCompat.requestPermissions(actividad, permisos,requestCode);
+        }
+    }
 }

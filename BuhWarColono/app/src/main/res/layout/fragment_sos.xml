@@ -40,46 +40,51 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tv066"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
                     android:gravity="center"
                     android:text="Sistema Nacional de Atención de Emergencias de la Ciudadanía 066"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tv068"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
                     android:gravity="center"
                     android:text="Bomberos 068"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tv060"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
                     android:gravity="center"
                     android:text="Policía Local 060 "
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv061"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
                     android:gravity="center"
                     android:text="Policía Judicial Estatal 061 "
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tv065"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
                     android:gravity="center"
                     android:text="Cruz Roja 065"
                     android:textSize="24sp" />
