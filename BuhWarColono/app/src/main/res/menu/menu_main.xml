@@ -10,23 +10,26 @@
         <item
             android:id="@+id/nav_info"
             android:icon="@android:drawable/ic_menu_info_details"
-            android:title="Acerca de ASP" />
+            android:title="Quienes somos" />
         <item
             android:id="@+id/nav_guardias"
             android:icon="@android:drawable/stat_sys_warning"
-            android:title="Guardias" />
+            android:title="Mis guardias" />
         <item
             android:id="@+id/nav_rondin"
             android:icon="@android:drawable/ic_dialog_map"
-            android:title="Rondin" />
-        <item
-            android:id="@+id/nav_visitas"
-            android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Programar visitas" />
+            android:title="Donde esta mi guardia" />
+
         <item
             android:id="@+id/nav_estdisticaas"
             android:icon="@android:drawable/ic_menu_sort_by_size"
-            android:title="Mis estadisticas" />
+            android:title="Mis registros" />
+
+        <item
+            android:id="@+id/nav_visitas"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Programar visita" />
+
         <item
             android:id="@+id/nav_calificar"
             android:icon="@android:drawable/ic_input_get"

@@ -68,7 +68,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Honestidad"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -91,7 +91,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Servicio"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -114,7 +114,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Profesional"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -160,7 +160,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Proactividad"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -183,7 +183,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Empatia"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -206,7 +206,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Comunicacion"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -229,7 +229,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Forma fisisca"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -252,7 +252,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Eficiencia"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -275,7 +275,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Amabilidad"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
@@ -298,7 +298,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Puntialidad"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <RatingBar
                             android:id="@+id/ratingBar"
